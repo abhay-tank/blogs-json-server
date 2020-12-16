@@ -6,11 +6,12 @@ const {
 	updateBlogById,
 	deleteBlogById,
 } = require("../controllers/blogsController");
+const validateRequestBody = require("../middlewares/validateRequestBody");
 const blogsRouter = express.Router();
 
-blogsRouter.route("/").get(getAllBlogs).post(createBlog);
+blogsRouter.route("/").get(getAllBlogs).post(validateRequestBody, createBlog);
 let idRoute = blogsRouter.route("/:id");
-idRoute.get(getBlogById).patch(updateBlogById);
+idRoute.get(getBlogById).patch(validateRequestBody, updateBlogById);
 
 // DELETE BLOG BY ID IS OPTIONAL
 // idRoute.delete(deleteBlogById);
