@@ -29,7 +29,6 @@ const getAllBlogs = (req, res) => {
 			);
 		}
 	}
-	let limit = parseInt(req.query.limit);
 	return sendSuccessResponse(200, "Successful", db, res);
 };
 // POST
@@ -49,7 +48,7 @@ const createBlog = (req, res) => {
 	fs.writeFile(dataSource, JSON.stringify(db, null, 2), (err) => {
 		if (err) {
 			return sendErrorResponse(
-				new ErrorResponse(500, "Unsuccessful", "Problem saving user"),
+				new ErrorResponse(500, "Unsuccessful", "Problem saving blog."),
 				res
 			);
 		}
@@ -57,13 +56,49 @@ const createBlog = (req, res) => {
 	});
 };
 // GET /:id
-const getBlogById = (req, res) => {};
+const getBlogById = (req, res) => {
+	return sendSuccessResponse(200, "Success", req.currentBlog, res);
+};
 // PATCH /:id
-const updateBlogById = (req, res) => {};
+const updateBlogById = (req, res) => {
+	let validationArray = [
+		"author",
+		"title",
+		"content",
+		"imageURL",
+		"relatedLinks",
+	];
+	validationArray.forEach((key) => {
+		if (req.body[key]) {
+			db[req.currentBlogIndex][key] = req.body[key];
+		}
+	});
+	fs.writeFile(dataSource, JSON.stringify(db, null, 2), (err) => {
+		if (err) {
+			return sendErrorResponse(
+				new ErrorResponse(500, "Unsuccessful", "Problem updating Blog"),
+				res
+			);
+		}
+		sendSuccessResponse(200, "Successful", db[req.currentBlogIndex], res);
+	});
+};
 // DELETE /:id
-const deleteBlogById = (req, res) => {};
+const deleteBlogById = (req, res) => {
+	db.splice(req.currentBlogIndex, 1);
+	fs.writeFile(dataSource, JSON.stringify(db, null, 2), (err) => {
+		if (err) {
+			return sendErrorResponse(
+				new ErrorResponse(500, "Unsuccessful", "Problem deleting Blog"),
+				res
+			);
+		}
+		sendSuccessResponse(200, "Successful", req.currentBlog, res);
+	});
+};
 
 module.exports = {
+	db,
 	getAllBlogs,
 	createBlog,
 	getBlogById,

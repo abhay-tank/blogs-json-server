@@ -21,12 +21,17 @@ const validateRequestBody = (req, res, next) => {
 			}
 		});
 	} else {
+		console.log("Inside patch validate request");
 		// Check request body for updateBlog
-		result = validationArray.some((key) => {
-			if (key == "relatedLinks") {
-				return validateLinks(req.body[key]);
+		result = Object.keys(req.body).every((key) => {
+			if (validationArray.includes(key)) {
+				if (key == "relatedLinks") {
+					return validateLinks(req.body[key]);
+				} else {
+					return req.body[key] && req.body[key].trim().length;
+				}
 			} else {
-				return req.body[key] && req.body[key].trim().length;
+				return true;
 			}
 		});
 	}
