@@ -13,6 +13,11 @@ const blogsRouter = require("./src/routes/blogsRouter");
 const app = express();
 
 app.use(express.json());
+app.use("/", (req, res) => {
+	res.send(
+		"Welcome to Feather API, refer documentation of Feather to get started. Find documentation at https://github.com/abhay-tank/blogs-json-server"
+	);
+});
 app.use("/blogs", blogsRouter);
 app.use("**", (req, res) => {
 	res.status(404).send("Invalid route");
