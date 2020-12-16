@@ -2,6 +2,12 @@
 
 Feather API is a Nodejs Express REST API which provides blog details.
 
+### Base URL
+
+```
+https://feather-api.herokuapp.com
+```
+
 ## API ENDPOINTS
 
 ### Fetch blogs
