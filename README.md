@@ -144,6 +144,8 @@ $ npm install --production
 $ NODE_ENV=production npm run start
 ```
 
-##### POSTMAN Collection Link - [Feather API](https://www.getpostman.com/collections/555c3129555e05068655)
+##### POSTMAN Collection -
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/555c3129555e05068655)
 
 ##### Deployed on Heroku - [https://feather-api.herokuapp.com/](https://feather-api.herokuapp.com/)
