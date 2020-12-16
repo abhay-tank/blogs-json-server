@@ -10,7 +10,7 @@ https://feather-api.herokuapp.com
 
 ## API ENDPOINTS
 
-### Fetch blogs
+### GET - Fetch blogs
 
 ```
 /blogs
@@ -30,11 +30,13 @@ A simple **GET** request on /blogs will return all blogs in database.
 
 **GET** request on /blogs with specified id in params will return blog with specific id.
 
-### Create new Blog
+### POST - Create new Blog
 
 ```
 /blogs
 ```
+
+**POST** request on /blogs with valid request body will create new Blog.
 
 #### **author, title, content and imageURL are required\***
 
@@ -59,7 +61,7 @@ A simple **GET** request on /blogs will return all blogs in database.
 }
 ```
 
-### Update blog
+### PATCH - Update blog
 
 ```
 /blogs:id
@@ -82,7 +84,7 @@ A simple **GET** request on /blogs will return all blogs in database.
 }
 ```
 
-#### Delete Blog
+#### DELETE - Delete Blog
 
 **DELETE** request with specified id will delete the blog from database.
 
