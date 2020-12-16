@@ -34,9 +34,10 @@ const getAllBlogs = (req, res) => {
 // POST
 const createBlog = (req, res) => {
 	let relatedLinks = [];
-	req.body.relatedLinks.forEach((link) =>
-		relatedLinks.push(new BlogLink(link.id, link.title))
-	);
+	if (req.body.relatedLinks)
+		req.body.relatedLinks.forEach((link) =>
+			relatedLinks.push(new BlogLink(link.id, link.title))
+		);
 	let newBlog = new Blog(
 		req.body.author,
 		req.body.title,
