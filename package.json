@@ -1,0 +1,32 @@
+{
+	"name": "blogs-json-server",
+	"version": "1.0.0",
+	"description": "Blogs JSON server using FS.",
+	"main": "app.js",
+	"scripts": {
+		"test": "node test.js",
+		"start": "node app.js",
+		"dev": "nodemon app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/abhay-tank/blogs-json-server.git"
+	},
+	"keywords": [
+		"blogs",
+		"data-server",
+		"json-server",
+		"fs"
+	],
+	"author": "Abhay Tank",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/abhay-tank/blogs-json-server/issues"
+	},
+	"homepage": "https://github.com/abhay-tank/blogs-json-server#readme",
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"uniqid": "^5.2.0"
+	}
+}
