@@ -137,3 +137,5 @@ $ NODE_ENV=production npm run start
 ```
 
 ##### POSTMAN Collection Link - [Feather API](https://www.getpostman.com/collections/555c3129555e05068655)
+
+## Deployed on Heroku - [Feather API](https://feather-api.herokuapp.com/)
