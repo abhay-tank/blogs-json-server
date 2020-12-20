@@ -5,7 +5,7 @@ Feather API is a Nodejs Express REST API which provides blog details.
 ### Base URL
 
 ```
-https://feather-api.herokuapp.com
+https://feather-json-api.herokuapp.com/
 ```
 
 ## API ENDPOINTS
@@ -148,4 +148,4 @@ $ NODE_ENV=production npm run start
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/555c3129555e05068655)
 
-##### Deployed on Heroku - [https://feather-api.herokuapp.com/](https://feather-api.herokuapp.com/)
+##### Deployed on Heroku - [https://feather-json-api.herokuapp.com/](https://feather-json-api.herokuapp.com/)
